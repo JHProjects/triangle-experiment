@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
+body {
+    user-select: none;
+    cursor: crosshair;
+    font-family: 'DM Serif Display', sans-serif;
+    -webkit-text-stroke: .9px red;
+    font-weight: 700;
+    letter-spacing: .0em;
+    font-size: 35px;
+    width: auto;
+    height: 100vh;
+    max-height: 1080px;
+    background: radial-gradient(white, #F00);
+    background-size: cover;
+    overflow: hidden;
+}
+
+.container {
+  outline: 2px solid transparent;
+  border-radius: 10%;
+  transform-style: preserve-3d;
+  transform: perspective(1.5cm);
+  width: 200px;
+  height: 200px;
+  
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  padding: 0 5px 35px 5px;
+  margin: auto;
+  
+  animation: anim-rotate 15s infinite ease-in-out alternate-reverse;
+}
+
+.side {
+  width: 200px;
+  height: 200px;
+  aspect-ratio: 1/1;
+  outline: 1px solid red;
+  position: absolute;
+  margin: auto;
+  color: white;
+  text-align: center;
+  line-height: 200px;
+  opacity: 75%;
+}
+
+
+.a {
+  background: 
+    url(https://scontent-prg1-1.xx.fbcdn.net/v/t1.6435-9/180978949_314228950059549_1005358403722529104_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=naAPZhpBWQIAX_yY-Yg&_nc_ht=scontent-prg1-1.xx&oh=00_AT9QfDidbcfKEZnaKKQjuqwpNT7_clGRozvDlK3Ci1LtLQ&oe=6258C60E) 
+    no-repeat center;
+  background-size: 200px 200px;
+  transform: 
+    translateX(50px)
+    translateY(12px)
+    rotateY(-90deg)
+    rotateX(-30deg);
+}
+
+.b {
+  background: 
+    url(https://images9.gry-online.pl/galeria/galeria_duze3/4407468.jpg) 
+    no-repeat center;
+  background-size: 200px 200px;
+  transform: 
+    translateX(-50px)
+    translateY(12px)
+    rotateY(90deg)
+    rotateX(-30deg);
+}
+
+.c {
+  line-height: 50px;
+  background: 
+    url(https://i0.wp.com/twinfinite.net/wp-content/uploads/2021/04/Resident-Evil-Village.jpg-7-scaled.jpg?w=1920&ssl=1) 
+    center;
+  background-size: 400px 150px;
+  transform: 
+    translateY(100px)
+    rotateX(90deg);
+}
+
+
+@keyframes anim-rotate {
+  0% {
+     transform: 
+      rotateX(-10deg)
+      rotateY(30deg)
+      rotateZ(50deg);
+  }
+  
+  50% {
+    transform: 
+      rotateY(1turn)
+      rotateX(1turn - 10deg)
+      rotateY(calc(30deg + 1turn));
+  }
+  100% {}
+}
+
+
+@keyframes anim-rotate3d {
+  from { transform: rotate3d(0) }
+  to { transform: rotate3d(1, -1, 0, 1turn) }
+}
